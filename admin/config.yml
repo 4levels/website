@@ -4,7 +4,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "images"
 collections:
-  - name: "pagina's"
+  - name: "pagina"
     label: "Pagina's"
     folder: _paginas
     create: true
