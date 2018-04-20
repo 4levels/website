@@ -4,6 +4,13 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "images"
 collections:
+  - name: "pagina's"
+    label: "Pagina's"
+    folder: _paginas
+    create: true
+    fields:
+      - { label: Titel, name: title, widget: string }
+      - { label: Intro, name: intro, widget: markdown }
   - name: "nieuws"
     label: "Nieuws"
     folder: _nieuws
