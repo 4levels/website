@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master
+  publish_mode: editorial_workflow
+  media_folder: "images"
+collections:
+  - name: "nieuws"
+    label: "Nieuws"
+    folder: _nieuws
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "nieuws" }
+      - { label: "Titel", name: "titel", widget: "string" }
+      - { label: "Datum publicatie", name: "datum", widget: "date" }
+      - { label: "Afbeelding", name: "thumbnail", widget: "image", required: false }
+      - { label: "Bericht", name: "bericht", widget: "markdown" }
+
+
