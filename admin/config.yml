@@ -6,6 +6,7 @@ media_folder: "images"
 collections:
   - name: "pagina"
     label: "Pagina's"
+    label_singular: "Pagina"
     folder: _paginas
     create: true
     fields:
