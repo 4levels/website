@@ -1,6 +1,8 @@
 ---
 title: Welkom op onze school
-intro: >-
+intro: >2-
+   
+
   ![](/images/verhaalavond_2018_a5_def.jpg)
 
 
