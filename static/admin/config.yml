@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: steinerschool-de-teunisbloem/webite
+  repo: steinerschool-de-teunisbloem/website
 publish_mode: editorial_workflow
 public_folder: assets
 media_folder: static/assets
