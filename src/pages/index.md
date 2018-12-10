@@ -1,9 +1,9 @@
 ---
-templateKey: 'home-page'
-path: /
+templateKey: home-page
 title: Welkom op onze school
 ---
 ### Bedankt voor je bezoek op onze website!
+
 Onze school  werkt vanuit de ideëen van Rudolf Steiner.  
 Zijn pedagogische visie was dat elk kind zich moet kunnen ontwikkelen tot een innerlijk vrij, zelfstandig en verantwoordelijk mens.
 Cognitieve vaardigheden zijn hierbij gelijkwaardig aan emotionele, sociale en kunstzinnige vorming. 
