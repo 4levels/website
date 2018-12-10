@@ -1,19 +1,19 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: test-repo
 publish_mode: editorial_workflow
-media_folder: "images"
+public_folder: assets
+media_folder: static/assets
 collections:
-  - name: "pagina"
-    label: "Pagina's"
-    label_singular: "Pagina"
+  - name: pagina
+    label: Pagina's
+    label_singular: Pagina
     folder: _paginas
     create: true
     fields:
       - { label: Titel, name: title, widget: string }
       - { label: Intro, name: intro, widget: markdown }
-  - name: "nieuws"
-    label: "Nieuws"
+  - name: nieuws
+    label: Nieuwsssss
     folder: _nieuws
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
