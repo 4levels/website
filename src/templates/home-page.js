@@ -38,7 +38,7 @@ const HomePage = ({ data }) => {
     <Layout>
       <HomePageTemplate
         contentComponent={HTMLContent}
-        title={post.frontmatter && post.frontmatter.title}
+        title={post.frontmatter.title}
         content={post.html}
       />
     </Layout>
