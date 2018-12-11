@@ -1,6 +1,6 @@
 ---
 templateKey: school-page
-title: About our School
+title: Onze School
 ---
 ![Tekening](/img/tekening.jpg)
 
