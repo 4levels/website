@@ -46,6 +46,7 @@ const TemplateWrapper = ({ children }) => (
           backgroundAttachment: 'fixed',
           backgroundSize:  'cover',
           backgroundColor: '#FFF',
+          minHeight: '100vh',
         }}>{children}</div>
       </div>
     )}
