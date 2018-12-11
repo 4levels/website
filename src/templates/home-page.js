@@ -70,7 +70,11 @@ HomePageTemplate.propTypes = {
   info: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    blurbs: PropTypes.array,
+    blurbs: PropTypes.arrayOf(PropTypes.shape({
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      heading: PropTypes.string,
+      description: PropTypes.string,
+    })),
   }),
   testimonials: PropTypes.array,
 }
@@ -121,7 +125,9 @@ export const homePageQuery = graphql`
             text
           }
         }
-        intro {
+        info {
+          heading
+          description
           blurbs {
             image {
               childImageSharp {
@@ -132,8 +138,6 @@ export const homePageQuery = graphql`
             }
             text
           }
-          heading
-          description
         }
         testimonials {
           author

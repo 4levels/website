@@ -44,15 +44,16 @@ collections:
           - label: Info
             name: info
             widget: object
-            fields:
-              - {label: Heading, name: heading, widget: string}
-              - {label: Description, name: description, widget: text}
-              - label: Blurbs
-                name: blurbs
-                widget: list
-                fields:
-                  - {label: Image, name: image, widget: image}
-                  - {label: Text, name: text, widget: text}
+            fields: [
+              {label: Heading, name: heading, widget: string},
+              {label: Description, name: description, widget: text},
+              {label: Blurbs, name: blurbs, widget: list,
+                fields: [
+                  {label: Image, name: image, widget: image},
+                  {label: Text, name: text, widget: text},
+                ]
+              }
+            ]
           - label: Testimonials
             name: testimonials
             widget: list
