@@ -1,6 +1,14 @@
 ---
 templateKey: home-page
 title: Welkom op onze school
+carousel:
+  images:
+    - image: /img/chemex.jpg
+    - image: /img/flavor_wheel.jpg
+    - image: /img/jumbotron.jpg
+info:
+  description: ''
+  heading: Bedankt voor je bezoek op onze website!
 ---
 ### Bedankt voor je bezoek op onze website!
 
