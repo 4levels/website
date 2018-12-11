@@ -8,56 +8,128 @@ public_folder: /img
 publish_mode: editorial_workflow
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: blog
+    label: Blog
     folder: "src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Template Key", name: templateKey, widget: hidden, default: "blog-post"}
+      - {label: Title, name: title, widget: string}
+      - {label: "Publish Date", name: date, widget: datetime}
+      - {label: Description, name: description, widget: text}
+      - {label: Body, name: body, widget: markdown}
+      - {label: Tags, name: tags, widget: list}
 
-  - name: "pages"
-    label: "Pages"
+  - name: pages
+    label: Pages
     files:
       - file: "src/pages/home/index.md"
-        label: "Welkom"
-        name: "home"
+        label: Welkom
+        name: home
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: "home-page"}
           - {label: Title, name: title, widget: string}
-          - {label: Carousel, name: carousel, widget: object, fields: [{label: Images, name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Info, name: info, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - label: Carousel
+            name: carousel
+            widget: object
+            fields:
+              - label: Images
+                name: images
+                widget: list
+                fields: 
+                  - {label: Image, name: image, widget: image}
+                  - {label: Text, name: text, widget: text}
+          - label: Info
+            name: info
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: text}
+              - label: Blurbs
+                name: blurbs
+                widget: list
+                fields: 
+                  - {label: Image, name: image, widget: image}
+                  - {label: Text, name: text, widget: text}
           - {label: Body, name: body, widget: markdown}
       - file: "src/pages/school/index.md"
-        label: "Onze school"
-        name: "school"
+        label: Onze school
+        name: school
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "school-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Template Key", name: templateKey, widget: hidden, default: "school-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
       - file: "src/pages/classes/index.md"
-        label: "Klasgebeuren"
-        name: "classes"
+        label: Klasgebeuren
+        name: classes
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "classes-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Template Key", name: templateKey, widget: hidden, default: "classes-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
       - file: "src/pages/pedagogy/index.md"
-        label: "Pedagogie"
-        name: "pedagogy"
+        label: Pedagogie
+        name: pedagogy
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pedagogy-page"}
+          - {label: "Template Key", name: templateKey, widget: hidden, default: "pedagogy-page"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
+          - label: Intro
+            name: intro
+            widget: object
+            fields: 
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: text}
+              - label: Blurbs
+                name: blurbs
+                widget: list
+                fields: 
+                  - {label: Image, name: image, widget: image}
+                  - {label: Text, name: text, widget: text}
+          - label: Main
+            name: main
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: text}
+              - label: Image1
+                name: image1
+                widget: object
+                fields: 
+                  - {label: Image, name: image, widget: image}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Image2
+                name: image2
+                widget: object
+                fields: 
+                  - {label: Image, name: image, widget: image}
+                  - {label: Alt, name: alt, widget: string}
+              - label: Image3
+                name: image3
+                widget: object
+                fields: 
+                  - {label: Image, name: image, widget: image}
+                  - {label: Alt, name: alt, widget: string}
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields: 
+              - {label: Quote, name: quote, widget: string}
+              - {label: Author, name: author, widget: string}
           - {label: Full_image, name: full_image, widget: image}
-          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+          - label: Pricing
+            name: pricing
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: string}
+              - label: Plans
+                name: plans
+                widget: list
+                fields:
+                  - {label: Plan, name: plan, widget: string}
+                  - {label: Price, name: price, widget: string}
+                  - {label: Description, name: description, widget: string}
+                  - {label: Items, name: items, widget: list}
