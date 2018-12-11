@@ -1,9 +1,11 @@
 import CMS from 'netlify-cms'
 
-import AboutPagePreview from './preview-templates/AboutPagePreview'
+import ClassesPagePreview from './preview-templates/ClassesPagePreview'
+import SchoolPagePreview from './preview-templates/SchoolPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
-import ProductPagePreview from './preview-templates/ProductPagePreview'
+import PedagogyPagePreview from './preview-templates/PedagogyPagePreview'
 
-CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
+CMS.registerPreviewTemplate('classes', ClassesPagePreview)
+CMS.registerPreviewTemplate('school', SchoolPagePreview)
+CMS.registerPreviewTemplate('pedagogy', PedagogyPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
