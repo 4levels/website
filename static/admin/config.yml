@@ -37,9 +37,9 @@ collections:
               - label: Images
                 name: images
                 widget: list
-                fields: 
+                fields:
                   - {label: Image, name: image, widget: image}
-                  - {label: Text, name: text, widget: text}
+                  - {label: Text, name: text, widget: markdown}
           - label: Info
             name: info
             widget: object
@@ -49,9 +49,15 @@ collections:
               - label: Blurbs
                 name: blurbs
                 widget: list
-                fields: 
+                fields:
                   - {label: Image, name: image, widget: image}
-                  - {label: Text, name: text, widget: text}
+                  - {label: Text, name: text, widget: markdown}
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - {label: Quote, name: quote, widget: markdown}
+              - {label: Author, name: author, widget: string}
           - {label: Body, name: body, widget: markdown}
       - file: "src/pages/school/index.md"
         label: Onze school
@@ -79,13 +85,13 @@ collections:
           - label: Intro
             name: intro
             widget: object
-            fields: 
+            fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Description, name: description, widget: text}
               - label: Blurbs
                 name: blurbs
                 widget: list
-                fields: 
+                fields:
                   - {label: Image, name: image, widget: image}
                   - {label: Text, name: text, widget: text}
           - label: Main
@@ -97,25 +103,25 @@ collections:
               - label: Image1
                 name: image1
                 widget: object
-                fields: 
+                fields:
                   - {label: Image, name: image, widget: image}
                   - {label: Alt, name: alt, widget: string}
               - label: Image2
                 name: image2
                 widget: object
-                fields: 
+                fields:
                   - {label: Image, name: image, widget: image}
                   - {label: Alt, name: alt, widget: string}
               - label: Image3
                 name: image3
                 widget: object
-                fields: 
+                fields:
                   - {label: Image, name: image, widget: image}
                   - {label: Alt, name: alt, widget: string}
           - label: Testimonials
             name: testimonials
             widget: list
-            fields: 
+            fields:
               - {label: Quote, name: quote, widget: string}
               - {label: Author, name: author, widget: string}
           - {label: Full_image, name: full_image, widget: image}
