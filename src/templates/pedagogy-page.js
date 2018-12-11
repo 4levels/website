@@ -22,7 +22,7 @@ export const PedagogyPageTemplate = ({
     <div className="container">
       <div className="section">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column is-10 is-offset-1 main-content">
             <div className="content">
               <div
                 className="full-width-image-container margin-top-0"
@@ -95,11 +95,15 @@ export const PedagogyPageTemplate = ({
                   })`,
                 }}
               />
+              {/*
+
               <h2 className="has-text-weight-semibold is-size-2">
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
               <Pricing data={pricing.plans} />
+
+               */}
             </div>
           </div>
         </div>
