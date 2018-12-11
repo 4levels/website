@@ -32,8 +32,8 @@ export default class IndexPage extends React.Component {
                       <p>
                         <br />
                         <br />
-                        <Link className="button is-small" to="about">
-                          Keep Reading →
+                        <Link className="button is-small" to="school">
+                          Our School →
                         </Link>
                       </p>
                     </div>

@@ -46,11 +46,17 @@ const Navbar = class extends React.Component {
       </div>
       <div id="navMenu" className="navbar-menu">
       <div className="navbar-start has-text-centered">
-        <Link className="navbar-item" to="/about">
-          About
+        <Link className="navbar-item" to="/school">
+          Onze School
         </Link>
-        <Link className="navbar-item" to="/products">
-          Products
+        <Link className="navbar-item" to="/pedagogy">
+          Pedagogie
+        </Link>
+        <Link className="navbar-item" to="/classes">
+          Klasgebeuren
+        </Link>
+        <Link className="navbar-item" to="/classes">
+          Impressies
         </Link>
         <Link className="navbar-item" to="/contact">
           Contact
@@ -62,7 +68,7 @@ const Navbar = class extends React.Component {
       <div className="navbar-end has-text-centered">
         <a
           className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
+          href="https://github.com/steinerschool-de-teunisbloem/website"
           target="_blank"
           rel="noopener noreferrer"
         >

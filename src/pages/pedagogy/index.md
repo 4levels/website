@@ -1,7 +1,7 @@
 ---
-templateKey: 'product-page'
-path: /products
-title: Our Coffee
+templateKey: 'pedagogy-page'
+path: /pedagogy
+title: Pedagogie
 image: /img/jumbotron.jpg
 heading: What we offer
 description: >-

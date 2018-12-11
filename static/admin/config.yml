@@ -30,15 +30,22 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/school/index.md"
+        label: "Onze school"
+        name: "school"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "school-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/classes/index.md"
+        label: "Klasgebeuren"
+        name: "classes"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "classes-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/pedagogy/index.md"
-        label: "Pedagogy Page"
+        label: "Pedagogie"
         name: "pedagogy"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pedagogy-page"}
