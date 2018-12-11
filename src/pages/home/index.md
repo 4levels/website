@@ -9,6 +9,7 @@ carousel:
       text: ''
     - image: /img/jumbotron.jpg
       text: ''
+testimonials: []
 info:
   description: ''
   heading: Bedankt voor je bezoek op onze website!
