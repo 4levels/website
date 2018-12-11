@@ -1,16 +1,59 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import { HTMLContent } from '../components/Content'
+import Testimonials from '../components/Testimonials'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Slider from 'react-slick'
+
 
 export default class IndexPage extends React.Component {
+
   render() {
     const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { node } = data.allMarkdownRemark.edges[0]
+    const { html } = node
+    const { title, carousel, testimonials } = node.frontmatter
+    const slickSettings = {
+      infinite: true,
+      autoplay: true,
+      fade: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+    }
 
     return (
       <Layout>
+        <section className="section section--gradient">
+          <div className="container">
+            <div className="section">
+              <div className="columns">
+                <div className="column is-10 is-offset-1 main-content">
+                  <div className="content">
+                    <Slider {...slickSettings }>
+                      { carousel.images.map((item, idx) => (
+                        <div key={"slick_" + idx}>
+                          <PreviewCompatibleImage imageInfo={item}/>
+                        </div>
+                      )) }
+                    </Slider>
+                    <h2>
+                        {title}
+                    </h2>
+                    <HTMLContent content={html}/>
+                    <Testimonials testimonials={testimonials} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        { /*
+
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -42,6 +85,9 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </section>
+
+         */ }
+
       </Layout>
     )
   }
@@ -64,16 +110,24 @@ export const pageQuery = graphql`
       edges {
         node {
           html
-
-          excerpt(pruneLength: 400)
-          id
-          fields {
-            slug
-          }
           frontmatter {
             title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
+            carousel {
+              images {
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 1280, quality: 64, maxHeight: 200, cropFocus: CENTER) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                text
+              }
+            }
+            testimonials {
+              author
+              quote
+            }
           }
         }
       }

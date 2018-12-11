@@ -4,12 +4,13 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
-// import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Slider from 'react-slick'
 
 export const PedagogyPageTemplate = ({
   image,
   title,
+  carousel,
   heading,
   description,
   intro,
@@ -17,35 +18,34 @@ export const PedagogyPageTemplate = ({
   testimonials,
   fullImage,
   pricing,
-}) => (
-  <section className="section section--gradient">
-    <div className="container">
-      <div className="section">
+}) => {
+
+  const slickSettings = {
+    infinite: true,
+    autoplay: true,
+    fade: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  }
+
+  return (
+    <section className="section section--gradient">
+      <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1 main-content">
-            <div className="content">
-              <div
-                className="full-width-image-container margin-top-0"
-                style={{
-                  backgroundImage: `url(${
-                    !!image.childImageSharp
-                      ? image.childImageSharp.fluid.src
-                      : image
-                  })`,
-                }}
-              >
-                <h2
-                  className="has-text-weight-bold is-size-1"
-                  style={{
-                    boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-                    backgroundColor: '#f40',
-                    color: 'white',
-                    padding: '1rem',
-                  }}
-                >
-                  {title}
-                </h2>
-              </div>
+            <div className="section">
+              <Slider {...slickSettings }>
+                { carousel.images.map((item, idx) => (
+                  <div key={"slick_" + idx}>
+                    <PreviewCompatibleImage imageInfo={item}/>
+                  </div>
+                )) }
+              </Slider>
+              <h2>
+                {title}
+              </h2>
               <div className="columns">
                 <div className="column is-7">
                   <h3 className="has-text-weight-semibold is-size-2">
@@ -103,18 +103,24 @@ export const PedagogyPageTemplate = ({
               <p className="is-size-5">{pricing.description}</p>
               <Pricing data={pricing.plans} />
 
-               */}
+              */}
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 PedagogyPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  carousel: PropTypes.shape({
+    images: PropTypes.arrayOf(PropTypes.shape({
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      text: PropTypes.string,
+    })),
+  }),
   heading: PropTypes.string,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -144,6 +150,7 @@ const PedagogyPage = ({ data }) => {
       <PedagogyPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        carousel={frontmatter.carousel}
         heading={frontmatter.heading}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -176,6 +183,18 @@ export const pedagogyPageQuery = graphql`
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        carousel {
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1280, quality: 64, maxHeight: 200, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
           }
         }
         heading

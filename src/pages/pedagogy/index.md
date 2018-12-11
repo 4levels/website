@@ -2,6 +2,8 @@
 templateKey: 'pedagogy-page'
 path: /pedagogy
 title: Pedagogie
+carousel:
+  images: []
 image: /img/jumbotron.jpg
 heading: What we offer
 description: >-

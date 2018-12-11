@@ -10,12 +10,6 @@ carousel:
     - image: /img/jumbotron.jpg
       text: ''
 testimonials: []
-info:
-  description: ''
-  heading: Bedankt voor je bezoek op onze website!
-  blurbs:
-    - image: '/img/chemex.jpg'
-      text: ''
 ---
 Onze school  werkt vanuit de ideëen van Rudolf Steiner.\
 Zijn pedagogische visie was dat elk kind zich moet kunnen ontwikkelen tot een innerlijk vrij, zelfstandig en verantwoordelijk mens.

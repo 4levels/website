@@ -3,52 +3,49 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import Features from '../components/Features'
+// import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Slider from 'react-slick'
 
 export const HomePageTemplate = ({
   title,
   content,
   contentComponent,
   carousel,
-  info,
   body,
   testimonials,
 }) => {
 
+  const slickSettings = {
+    infinite: true,
+    autoplay: true,
+    fade: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  }
   const PageContent = contentComponent || Content
 
   return (
     <section className="section section--gradient">
       <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1 main-content">
-              <div className="content">
-                <Features gridItems={carousel.images} />
-                <h2>
-                    {title}
-                </h2>
-                <div className="columns">
-                  <div className="column is-7">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {info.heading}
-                    </h3>
-                    <p>{info.description}</p>
+        <div className="columns">
+          <div className="column is-10 is-offset-1 main-content">
+            <div className="section">
+              <Slider {...slickSettings }>
+                { carousel.images.map((item, idx) => (
+                  <div key={"slick_" + idx}>
+                    <PreviewCompatibleImage imageInfo={item}/>
                   </div>
-                </div>
-                <PageContent className="content" content={content} />
-                <Features gridItems={info.blurbs} />
-                <div className="columns">
-                  <div className="column is-7">
-                    <h3 className="has-text-weight-semibold is-size-3">
-                      {info.heading}
-                    </h3>
-                    <p>{info.description}</p>
-                  </div>
-                </div>
-                <Testimonials testimonials={testimonials} />
-              </div>
+                )) }
+              </Slider>
+              <h2>
+                  {title}
+              </h2>
+              <PageContent className="content" content={content} />
+              <Testimonials testimonials={testimonials} />
             </div>
           </div>
         </div>
@@ -67,20 +64,10 @@ HomePageTemplate.propTypes = {
       text: PropTypes.string,
     })),
   }),
-  info: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    blurbs: PropTypes.arrayOf(PropTypes.shape({
-      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      heading: PropTypes.string,
-      description: PropTypes.string,
-    })),
-  }),
   testimonials: PropTypes.array,
 }
 
 const HomePage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
   const { markdownRemark: post } = data
 
   return (
@@ -89,9 +76,8 @@ const HomePage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
         contentComponent={HTMLContent}
-        info={frontmatter.info}
-        carousel={frontmatter.carousel}
-        testimonials={frontmatter.testimonials}
+        carousel={post.frontmatter.carousel}
+        testimonials={post.frontmatter.testimonials}
       />
     </Layout>
   )
@@ -117,21 +103,7 @@ export const homePageQuery = graphql`
           images {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-        }
-        info {
-          heading
-          description
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 1280, quality: 64, maxHeight: 200, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
                 }
               }

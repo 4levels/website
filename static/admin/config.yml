@@ -41,18 +41,6 @@ collections:
                 fields:
                   - {label: "Image", name: "image", widget: "image"}
                   - {label: "Text", name: "text", widget: "text"}
-          - label: "Info"
-            name: "info"
-            widget: "object"
-            fields:
-              - label: "Blurbs"
-                name: "blurbs"
-                widget: "list"
-                fields:
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Text", name: "text", widget: "text"}
-              - {label: "Heading", name: "heading", widget: "string" }
-              - {label: "Description", name: "description", widget: "text" }
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
@@ -66,6 +54,16 @@ collections:
           - { label: "Template Key", name: templateKey, widget: hidden, default: "school-page" }
           - { label: Title, name: title, widget: string }
           - { label: Body, name: body, widget: markdown }
+          - label: "Carousel"
+            name: "carousel"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Text", name: "text", widget: "text"}
       - file: "src/pages/classes/index.md"
         label: Klasgebeuren
         name: classes
@@ -73,6 +71,16 @@ collections:
           - {label: "Template Key", name: templateKey, widget: hidden, default: "classes-page"}
           - {label: Title, name: title, widget: string}
           - {label: Body, name: body, widget: markdown}
+          - label: "Carousel"
+            name: "carousel"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Text", name: "text", widget: "text"}
       - file: "src/pages/pedagogy/index.md"
         label: Pedagogie
         name: pedagogy
@@ -82,6 +90,16 @@ collections:
           - { label: Image, name: image, widget: image}
           - { label: Heading, name: heading, widget: string}
           - { label: Description, name: description, widget: string}
+          - label: "Carousel"
+            name: "carousel"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Text", name: "text", widget: "text"}
           - label: Intro
             name: intro
             widget: object

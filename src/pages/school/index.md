@@ -1,6 +1,9 @@
 ---
 templateKey: school-page
 title: Onze School
+carousel:
+  images: []
+
 ---
 ![Tekening](/img/tekening.jpg)
 
