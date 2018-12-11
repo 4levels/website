@@ -30,6 +30,7 @@ collections:
         fields:
           - {label: "Template Key", name: templateKey, widget: hidden, default: "home-page"}
           - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
           - label: Carousel
             name: carousel
             widget: object
@@ -39,7 +40,7 @@ collections:
                 widget: list
                 fields:
                   - {label: Image, name: image, widget: image}
-                  - {label: Text, name: text, widget: markdown}
+                  - {label: Text, name: text, widget: text}
           - label: Info
             name: info
             widget: object
@@ -51,14 +52,13 @@ collections:
                 widget: list
                 fields:
                   - {label: Image, name: image, widget: image}
-                  - {label: Text, name: text, widget: markdown}
+                  - {label: Text, name: text, widget: text}
           - label: Testimonials
             name: testimonials
             widget: list
             fields:
               - {label: Quote, name: quote, widget: markdown}
               - {label: Author, name: author, widget: string}
-          - {label: Body, name: body, widget: markdown}
       - file: "src/pages/school/index.md"
         label: Onze school
         name: school
