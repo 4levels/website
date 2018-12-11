@@ -14,7 +14,7 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-10 is-offset-1">
+              <div className="column is-10 is-offset-1 main-content">
                 {posts
                   .map(({ node: post }, idx) => (
                     <div
@@ -33,7 +33,7 @@ export default class IndexPage extends React.Component {
                         <br />
                         <br />
                         <Link className="button is-small" to="school">
-                          Our School →
+                          Onze School →
                         </Link>
                       </p>
                     </div>
