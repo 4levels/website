@@ -3,7 +3,7 @@ templateKey: home-page
 title: Welkom op onze school
 carousel:
   images:
-    - image: /img/chemex.jpg
+    - image: /img/img_4631.jpg
       text: ''
     - image: /img/flavor_wheel.jpg
       text: ''
