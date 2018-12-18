@@ -5,10 +5,6 @@ carousel:
   images:
     - image: /img/img_4631.jpg
       text: ''
-    - image: /img/flavor_wheel.jpg
-      text: ''
-    - image: /img/jumbotron.jpg
-      text: ''
 testimonials:
   - quote: Test
 ---
