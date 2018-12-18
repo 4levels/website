@@ -1,20 +1,29 @@
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Buda:300');
+
 @import "~bulma/sass/utilities/initial-variables"
 
 // Config vars
 // Kalidi logo brand color: #FD461E
+$text-yellow: #ffec82
 $kaldi-red: #D64000
 $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
-$body-color: #333
+$body-color: $text-yellow
 
+$family-primary: "Buda", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
+$family-logo: "Dancing Script"
 .navbar .navbar-menu
   box-shadow:none !important
 
 .main-content
-  background-color: #FFFD
-
+  background-color: #000D
+  border-radius: .5rem
+  h1, h2, h3, h4, h5, h6
+    color: $text-yellow !important
 .content ul.slick-dots
   margin-left: 0
   margin-top: 0

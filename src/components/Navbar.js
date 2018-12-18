@@ -31,7 +31,7 @@ const Navbar = class extends React.Component {
  render() {
    return (
 
-  <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
+  <nav className="navbar is-fixed-top" role="navigation" aria-label="main-navigation">
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item" title="Logo">
@@ -44,14 +44,21 @@ const Navbar = class extends React.Component {
           <span></span>
         </div>
       </div>
-      <div id="navMenu" className="navbar-menu">
-      <div className="navbar-start has-text-centered">
+      <div id="navMenu" className="nav-right navbar-menu">
+      <div className="navbar-end has-text-centered">
         <Link className="navbar-item" to="/school">
           Onze School
         </Link>
-        <Link className="navbar-item" to="/pedagogy">
-          Pedagogie
-        </Link>
+        <div className="navbar-item has-dropdown is-hoverable">
+          <Link className="navbar-link" to="/pedagogy">
+            Pedagogie
+          </Link>
+          <div className="navbar-dropdown">
+            <Link className="navbar-item" to="/pedagogy">
+              Kleuters
+            </Link>
+          </div>
+        </div>
         <Link className="navbar-item" to="/classes">
           Klasgebeuren
         </Link>
@@ -64,8 +71,6 @@ const Navbar = class extends React.Component {
         <Link className="navbar-item" to="/contact/examples">
           Form Examples
         </Link>
-      </div>
-      <div className="navbar-end has-text-centered">
         <a
           className="navbar-item"
           href="https://github.com/steinerschool-de-teunisbloem/website"

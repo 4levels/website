@@ -31,6 +31,7 @@
     "react-helmet": "^5.2.0",
     "react-slick": "^0.23.2",
     "react-typography": "^0.16.18",
+    "tunnel-agent": "request/tunnel-agent#v0.6.1",
     "typography": "^0.16.18",
     "uuid": "^3.2.1"
   },
@@ -49,6 +50,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "immutable": "^4.0.0-rc.12",
     "prettier": "^1.7.4",
     "rimraf": "^2.6.2"
   }

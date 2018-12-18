@@ -25,6 +25,9 @@ export const HomePageTemplate = ({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    style: {
+      maxHeight: 200
+    }
   }
   const PageContent = contentComponent || Content
 
