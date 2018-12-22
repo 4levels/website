@@ -1,10 +1,12 @@
 ---
 templateKey: home-page
-title: Welkom op onze school
 carousel:
+  height: '100'
   images:
     - image: /img/img_4631.jpg
       text: ''
+    - image: /img/chemex.jpg
+title: Welkom op onze school
 testimonials:
   - quote: Test
 ---
