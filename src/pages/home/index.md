@@ -7,8 +7,7 @@ carousel:
       text: ''
     - image: /img/chemex.jpg
 title: Welkom op onze school
-testimonials:
-  - quote: Test
+testimonials: []
 ---
 Onze school  werkt vanuit de ideeën van Rudolf Steiner.\
 Zijn pedagogische visie was dat elk kind zich moet kunnen ontwikkelen tot een innerlijk vrij, zelfstandig en verantwoordelijk mens.
