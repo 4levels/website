@@ -3,15 +3,12 @@ templateKey: home-page
 title: Welkom op onze school
 carousel:
   images:
-    - image: /img/chemex.jpg
+    - image: /img/img_4631.jpg
       text: ''
-    - image: /img/flavor_wheel.jpg
-      text: ''
-    - image: /img/jumbotron.jpg
-      text: ''
-testimonials: []
+testimonials:
+  - quote: Test
 ---
-Onze school  werkt vanuit de ideëen van Rudolf Steiner.\
+Onze school  werkt vanuit de ideeën van Rudolf Steiner.\
 Zijn pedagogische visie was dat elk kind zich moet kunnen ontwikkelen tot een innerlijk vrij, zelfstandig en verantwoordelijk mens.
 Cognitieve vaardigheden zijn hierbij gelijkwaardig aan emotionele, sociale en kunstzinnige vorming.
 Wij proberen kinderen een warme en zo veelzijdig mogelijke leeromgeving te bieden, waarin elk kind zijn eigen talenten kan ontwikkelen.
