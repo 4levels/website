@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "steinerschool-de-teunisbloem-website",
+  "description": "Steinerschool de Teunisbloem",
+  "version": "0.2",
+  "author": "Erik Van Kelst",
   "dependencies": {
     "bulma": "^0.7.0",
     "gatsby": "^2.0.0",
@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^2.1.1",
+    "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms": "^2.3.0",
@@ -31,6 +32,7 @@
     "react-helmet": "^5.2.0",
     "react-slick": "^0.23.2",
     "react-typography": "^0.16.18",
+    "styled-components": "^4.1.3",
     "tunnel-agent": "request/tunnel-agent#v0.6.1",
     "typography": "^0.16.18",
     "uuid": "^3.2.1"
@@ -50,7 +52,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "immutable": "^4.0.0-rc.12",
     "prettier": "^1.7.4",
     "rimraf": "^2.6.2"
   }
