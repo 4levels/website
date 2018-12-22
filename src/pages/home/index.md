@@ -1,6 +1,7 @@
 ---
 templateKey: home-page
 carousel:
+  height: '100'
   images:
     - image: /img/img_4631.jpg
       text: ''
