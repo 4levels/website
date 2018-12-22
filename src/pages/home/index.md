@@ -1,6 +1,12 @@
 ---
 templateKey: home-page
 title: Welkom op onze school
+slides: |-
+  ![](/img/chemex.jpg)
+
+  <!--s-->
+
+  ![](/img/flavor_wheel.jpg)
 carousel:
   images:
     - image: /img/img_4631.jpg
