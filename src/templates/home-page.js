@@ -25,9 +25,6 @@ export const HomePageTemplate = ({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    style: {
-      maxHeight: 200
-    }
   }
   const PageContent = contentComponent || Content
 
@@ -37,7 +34,7 @@ export const HomePageTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1 main-content">
             <div className="section">
-              <Slider {...slickSettings }>
+              <Slider {...slickSettings}>
                 { carousel.images.map((item, idx) => (
                   <div key={"slick_" + idx}>
                     <PreviewCompatibleImage imageInfo={item}/>
@@ -59,9 +56,10 @@ export const HomePageTemplate = ({
 
 HomePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   contentComponent: PropTypes.func,
   carousel: PropTypes.shape({
+    height: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       text: PropTypes.string,
@@ -106,7 +104,7 @@ export const homePageQuery = graphql`
           images {
             image {
               childImageSharp {
-                fluid(maxWidth: 1280, quality: 64, maxHeight: 200, cropFocus: CENTER) {
+                fluid(maxWidth: 1280, quality: 64, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
                 }
               }

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import CMS from 'netlify-cms'
 
-const CommandBar = styled.div`
+/*const CommandBar = styled.div`
   display: flex;
   width: 100%;
   margin-top: 10px;
@@ -47,23 +48,28 @@ const SlideControlHeader = styled.div`
   border-bottom: 1px solid black;
   margin-top: 20px;
 `;
+*/
 
 const SlideControl = props => {
-  const MarkdownControl = CMS.getWidget("markdown").control;
+  const ListControl = CMS.getWidget("list").control;
+  // const ImageControl = CMS.getWidget("image").control;
+  // const MarkdownControl = CMS.getWidget("markdown").control;
   return (
     <div>
-      <SlideControlHeader>Slide</SlideControlHeader>
-      <SlideCommandBar {...props.commandBarActions} />
-      <MarkdownControl {...props} />
+      { /*<SlideControlHeader>Slide</SlideControlHeader>
+      <SlideCommandBar {...props.commandBarActions} /> */}
+      <ListControl {...props} />
     </div>
   );
 };
 
 const SlidePreview = props => {
-  const MarkdownPreview = CMS.getWidget("markdown").preview;
-  return <div><hr /><MarkdownPreview {...props} /></div>;
+  const ListPreview = CMS.getWidget("list").preview;
+  // const ImagePreview = CMS.getWidget("image").preview;
+  // const MarkdownPreview = CMS.getWidget("markdown").preview;
+  return <div><hr /><ListPreview {...props} /></div>;
 };
-
+/*
 const getSlideActions = (onChange, slides, i) => {
   const slidesCopy = slides.slice();
 
@@ -96,7 +102,7 @@ const getSlideActions = (onChange, slides, i) => {
     }
   };
 };
-
+*/
 const defaultSeparator = "---";
 
 export class SlidesControl extends Component {
@@ -104,6 +110,7 @@ export class SlidesControl extends Component {
     return this.props.value ? this.props.value : "";
   }
 
+  /*
   handleSlideChange(value, i) {
     const newValues = this.getValue().split(
       this.props.field.get("separator", defaultSeparator)
@@ -124,7 +131,7 @@ export class SlidesControl extends Component {
       i
     );
   }
-
+  */
   render() {
     const slides = this.getValue().split(
       this.props.field.get("separator", defaultSeparator)
@@ -134,8 +141,8 @@ export class SlidesControl extends Component {
         {...this.props}
         key={i}
         value={slideContent}
-        onChange={value => this.handleSlideChange(value, i)}
-        commandBarActions={this.getSlideCommandBarActions(slides, i)}
+        { /*onChange={value => this.handleSlideChange(value, i)}
+        commandBarActions={this.getSlideCommandBarActions(slides, i)} */ }
       />
     ));
     return <div>{slideControls}</div>;

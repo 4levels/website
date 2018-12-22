@@ -21,18 +21,18 @@ collections:
       - {label: Body, name: body, widget: markdown}
       - {label: Tags, name: tags, widget: list}
 
-  - name: content
-    label: Inhoud
-    folder: "src/pages/content"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: templateKey, widget: hidden, default: "blog-post"}
-      - {label: Title, name: title, widget: string}
-      - {label: "Publish Date", name: date, widget: datetime}
-      - {label: Description, name: description, widget: text}
-      - {label: Body, name: body, widget: markdown}
-      - {label: Tags, name: tags, widget: list}
+#  - name: content
+#    label: Inhoud
+#    folder: "src/pages/content"
+#    create: true
+#    slug: "{{slug}}"
+#    fields:
+#      - {label: "Template Key", name: templateKey, widget: hidden, default: "blog-post"}
+#      - {label: Title, name: title, widget: string}
+#      - {label: "Publish Date", name: date, widget: datetime}
+#      - {label: Description, name: description, widget: text}
+#      - {label: Body, name: body, widget: markdown}
+#      - {label: Tags, name: tags, widget: list}
 
   - name: pages
     label: Pages
@@ -42,25 +42,32 @@ collections:
         name: "home"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - label: Slides
-            name: slides
-            widget: slides
-            separator: "\n\n<!--s-->\n\n"
           - label: "Carousel"
             name: "carousel"
             widget: "object"
+            required: false
             fields:
+              - { label: "Height", name: "height", widget: "string", required: false }
               - label: "Images"
                 name: "images"
                 widget: "list"
                 fields:
                   - {label: "Image", name: "image", widget: "image"}
                   - {label: "Text", name: "text", widget: "text"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+#          - label: Slides
+#            name: slides
+#            widget: slides
+#            separator: "\n\n<!--s-->\n\n"
+#            required: false
+#            fields:
+#              - {label: "Image", name: "image", widget: "image"}
+#              - {label: "Text", name: "text", widget: "text"}
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
+            required: false
             fields:
               - { label: "Quote", name: "quote", widget: "markdown" }
               - { label: "Author", name: "author", widget: "string" }

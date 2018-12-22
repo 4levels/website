@@ -5,8 +5,8 @@ import { HomePageTemplate } from '../../templates/home-page'
 
 const HomePagePreview = ({ entry, getAsset, widgetFor }) => {
 
-  const carouselImages = entry.getIn(['data', 'carousel', 'images'])
-  const images = carouselImages ? carouselImages.toJS() : []
+  const carouselData = entry.getIn(['data', 'carousel'])
+  const carousel = carouselData ? carouselData.toJS() : { images: [], height: 'auto'}
 
   const entryTestimonials = entry.getIn(['data', 'testimonials'])
   const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
@@ -15,7 +15,7 @@ const HomePagePreview = ({ entry, getAsset, widgetFor }) => {
     <HomePageTemplate
       title={entry.getIn(['data', 'title'])}
       content={widgetFor('body')}
-      carousel={{ images }}
+      carousel={carousel}
       testimonials={testimonials}
     />
   )
